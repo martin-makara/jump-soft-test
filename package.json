@@ -1,13 +1,26 @@
 {
   "name": "jump-soft-test",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Test project for Jump Soft",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martin-makara/jump-soft-test.git"
+  },
+  "author": "martin-makara",
+  "license": "ISC",
   "private": true,
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.3",
+    "joi": "^17.13.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.1",
+    "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
