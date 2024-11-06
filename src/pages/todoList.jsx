@@ -163,7 +163,7 @@ export default function Todolist() {
 												}}
 											>
 												<option value="0">Show all</option>
-												<option value="1">Active</option>
+												<option value="1">In progress</option>
 												<option value="2">Completed</option>
 												<option value="3">Expired</option>
 											</select>
@@ -227,11 +227,9 @@ export default function Todolist() {
 											<th className="bg-transparent">{title}</th>
 											<th className="bg-transparent">{description}</th>
 											<th className="bg-transparent">
-												{state === "0"
-													? "Deadline: " + new Date(deadline).toLocaleString()
-													: state === "1"
-													? "Completed"
-													: "Expired"}
+												{state === "0" ? "In progress" : state === "1" ? "Completed" : "Expired"}
+												<br />
+												{"Deadline: " + new Date(deadline).toLocaleString()}
 											</th>
 											<th className="bg-transparent">
 												<div className="float-end">
