@@ -59,7 +59,7 @@ export default function Login() {
 	}, []);
 
 	return (
-		<main className="d-flex flex-column vh-100 justify-content-between aling-items-center">
+		<main className="d-flex flex-column vh-100 justify-content-between aling-items-center overflow-hidden">
 			<Header title="Login" link="/register" linkText="Register" />
 			<div className="container d-flex justify-content-center">
 				<form onSubmit={handleSubmit(onSubmit)}>

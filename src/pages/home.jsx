@@ -79,7 +79,7 @@ export default function App() {
 	}, []);
 
 	return (
-		<main className="d-flex flex-column">
+		<main className="d-flex flex-column overflow-hidden">
 			<Header
 				breadcrumbs={
 					<nav aria-label="breadcrumb">
