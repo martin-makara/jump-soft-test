@@ -6,6 +6,9 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import Joi from "joi";
 import Header from "../components/Header";
 import LabelForAuthForm from "../components/LabelForAuthForm";
+import IconAdd from "../assets/Icon-add";
+import IconOpen from "../assets/Icon-open";
+import IconDelete from "../assets/Icon-delete";
 
 const schema = Joi.object({
 	title: Joi.string().required(),
@@ -115,16 +118,7 @@ export default function App() {
 											data-bs-toggle="modal"
 											data-bs-target="#todoListModal"
 										>
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="20"
-												height="20"
-												fill="white"
-												className="bi bi-plus-circle-fill"
-												viewBox="0 0 16 16"
-											>
-												<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
-											</svg>
+											<IconAdd />
 										</button>
 									</th>
 								</tr>
@@ -146,28 +140,10 @@ export default function App() {
 													className="btn btn-primary me-2"
 													onClick={() => navigation(`/todo-list/${id}`)}
 												>
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="20"
-														height="20"
-														fill="white"
-														className="bi bi-arrow-right-circle-fill"
-														viewBox="0 0 16 16"
-													>
-														<path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
-													</svg>
+													<IconOpen />
 												</button>
 												<button type="button" className="btn btn-danger float-end" onClick={() => deleteTodo(id)}>
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="20"
-														height="20"
-														fill="white"
-														className="bi bi-trash-fill"
-														viewBox="0 0 16 16"
-													>
-														<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
-													</svg>
+													<IconDelete />
 												</button>
 											</div>
 										</th>

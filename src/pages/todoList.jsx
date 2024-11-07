@@ -6,6 +6,12 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import Joi from "joi";
 import Header from "../components/Header";
 import LabelForAuthForm from "../components/LabelForAuthForm";
+import IconAdd from "../assets/Icon-add";
+import IconCheck from "../assets/Icon-check";
+import IconCheckFill from "../assets/Icon-check-fill";
+import IconX from "../assets/Icon-x";
+import IconDelete from "../assets/Icon-delete";
+import IconAlert from "../assets/Icon-alert";
 
 const schema = Joi.object({
 	title: Joi.string().required(),
@@ -206,16 +212,7 @@ export default function Todolist() {
 										</th>
 										<th scope="col" className="bg-transparent">
 											<button type="submit" className="btn btn-primary float-end">
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="16"
-													height="16"
-													fill="white"
-													className="bi bi-plus-circle-fill"
-													viewBox="0 0 16 16"
-												>
-													<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
-												</svg>
+												<IconAdd />
 											</button>
 										</th>
 									</tr>
@@ -256,53 +253,10 @@ export default function Todolist() {
 																: () => doneTodo(id, state === "0" ? "1" : "0")
 														}
 													>
-														{state === "0" ? (
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																width="20"
-																height="20"
-																fill="#00a96e"
-																className="bi bi-check-circle"
-																viewBox="0 0 16 16"
-															>
-																<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-																<path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
-															</svg>
-														) : state === "1" ? (
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																width="20"
-																height="20"
-																fill="white"
-																className="bi bi-check-circle-fill"
-																viewBox="0 0 16 16"
-															>
-																<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-															</svg>
-														) : (
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																width="20"
-																height="20"
-																fill="white"
-																className="bi bi-x-circle-fill"
-																viewBox="0 0 16 16"
-															>
-																<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
-															</svg>
-														)}
+														{state === "0" ? <IconCheck /> : state === "1" ? <IconCheckFill /> : <IconX />}
 													</button>
 													<button type="button" className="btn btn-danger" onClick={() => deleteTodo(id)}>
-														<svg
-															xmlns="http://www.w3.org/2000/svg"
-															width="20"
-															height="20"
-															fill="white"
-															className="bi bi-trash-fill"
-															viewBox="0 0 16 16"
-														>
-															<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
-														</svg>
+														<IconDelete />
 													</button>
 												</div>
 											</th>
@@ -319,17 +273,7 @@ export default function Todolist() {
 				className="alert alert-warning position-absolute top-0 start-0 mt-4 ms-4 z-n1 opacity-0"
 				role="alert"
 			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					fill="currentColor"
-					className="bi bi-exclamation-triangle"
-					viewBox="0 0 16 16"
-				>
-					<path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z" />
-					<path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
-				</svg>
+				<IconAlert />
 				Warning: Deadline is passed!
 			</div>
 		</main>
