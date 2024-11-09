@@ -50,7 +50,7 @@ export default function Register() {
 
 	const onSubmit = (data) => {
 		data.createdAt = date.toLocaleString();
-		getUserUrl.searchParams.set("mail", data.email);
+		getUserUrl.searchParams.set("email", data.email);
 
 		fetch(getUserUrl, {
 			method: "GET",
